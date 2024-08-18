@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { cartItem, getCartItems } from '../../redux/slices/cartSlice';
 import { useAppSelector } from '../../customHooks/hooks';
 import { constanValue } from '../../utils/constants';
@@ -6,8 +6,6 @@ import DiscountDisplay from '../common/DiscountDisplay';
 
 const CartSummary = () => {
   const items = useAppSelector(getCartItems);
-
-
   const calculateSubtotal = () => {
     return items.reduce((total, item) => total + item.price * item.quantity, 0);
   };

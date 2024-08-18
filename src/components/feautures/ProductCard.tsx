@@ -13,21 +13,23 @@ type productCard={
 }
 const ProductCard = ({item,disable}: productCard) => {
   const dispatch = useAppDispatch()
-  const [addedToCart, setAddedToCart] = useState(false);
+  // const [addedToCart, setAddedToCart] = useState(false);
   const [hover, setHover] = useState(false)
-  const [bounce,setBounce]=useState(false)
+  // const [bounce,setBounce]=useState(false)
 
   const addToCart = () => {
-    setAddedToCart(true)
+    // setAddedToCart(true)
     dispatch(addItem({ ...item,quantity:1}))
-    setTimeout(() => setAddedToCart(false), 500);
+    // setTimeout(() => setAddedToCart(false), 500);
   }
 
   return (
     <div className="bg-white shadow-md rounded-lg flex flex-col items-center space-y-4 relative pb-16"
       onMouseEnter={() => {setHover(true) 
-        setBounce(true)
-      setTimeout(()=>setBounce(false),500) }}
+        // setBounce(true)
+      // setTimeout(()=>setBounce(false),500) 
+      }
+      }
       onMouseLeave={() => setHover(false)}
     >
       <img src={item.image} alt={item.name} className="w-full h-96 object-contain rounded-md" />

@@ -53,7 +53,7 @@ const CartItemCard = ({ item, quantity }: CartItem) => {
         <ProductName name={item.name} />
         <ProductDecription description={item.description} />
         <ProductPrice price={item.price} />
-        <DiscountDisplay text={`${item.discount}${item.discountType == "percentage" ? "%" : "fixed"} Off | 1 offer applied`} />
+        <DiscountDisplay text={`${item.discount}${item.discountType === "percentage" ? "%" : "fixed"} Off | 1 offer applied`} />
       </div>
       {/* Quantity Controls and Remove */}
       <ItemQuantity quantity={quantity} handleAdd={onIncrease} handleDelete={onDecrease} onRemove={onRemove} />

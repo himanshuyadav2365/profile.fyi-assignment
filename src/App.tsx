@@ -1,11 +1,18 @@
 import React from 'react';
 import './App.css';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import { RouterProvider } from 'react-router-dom';
+import router from './router/AppRouter';
+import { SnackbarProvider } from 'notistack';
 
 function App() {
   return (
-    <div className="font-bold text-4xl underline">
-      HI
-    </div>
+    <Provider store={store}>
+      <SnackbarProvider maxSnack={1}>
+        <RouterProvider router={router} />
+      </SnackbarProvider>
+    </Provider>
   );
 }
 
